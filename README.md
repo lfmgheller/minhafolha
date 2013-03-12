@@ -1,0 +1,4 @@
+minhafolha
+==========
+
+minhafolha CI project
