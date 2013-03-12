@@ -1,0 +1,44 @@
+<h2><?=$action
+?></h2>
+<p>&nbsp;</p>
+
+<?=form_open('admin/places/updateHot') ?>
+<fieldset>
+    <p>
+    <label>First Place Title</label>
+    <input type="text" name="firstTitle" value="<?=$hot_place[0]['hot_dest_title']?>">
+    </p>
+    <p>
+    <label>First Place Details</label>
+    <textarea name="firstDetail" cols="10" rows="3"><?=$hot_place[0]['hot_dest_desc']?></textarea>
+    </p>
+    <p>
+    <label>Place:</label>
+    <?=form_dropdown_from_db('firstid','select place_id,place_title from places',$hot_place[0]['FK_place_id'])?>
+    </p>
+</fieldset>
+<fieldset>
+    <p>
+    <label>Second Place Title</label>
+    <input type="text" name="secondTitle" value="<?=$hot_place[1]['hot_dest_title']?>">
+     </p> <p>
+    <label>Second Place Details</label>
+    <textarea name="secondDetail" cols="10" rows="3"><?=$hot_place[1]['hot_dest_desc']?></textarea>
+     </p> <p>
+    <label>Place:</label>
+    <?=form_dropdown_from_db('secondid','select place_id,place_title from places',$hot_place[1]['FK_place_id'])?>
+    </p>
+</fieldset>
+<fieldset>
+    <p>
+    <label>Right Title</label>
+    <input type="text" name="rightTitle" value="<?=$hot_place[2]['hot_dest_title']?>"/>
+     </p> <p>
+    <label>Right Details</label>
+    <textarea name="rightDetail" cols="20" rows="5"><?=$hot_place[2]['hot_dest_desc']?></textarea>
+     </p> <p>
+    <label>Place:</label>
+    <?=form_dropdown_from_db('rightid','select place_id,place_title from places',$hot_place[2]['FK_place_id'])?>
+    </p>
+</fieldset>
+<input type="submit" value="Update" class="submit" onclick="javascript:alert('Updated Succesfully');">

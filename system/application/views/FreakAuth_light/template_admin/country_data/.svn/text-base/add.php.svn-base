@@ -1,0 +1,34 @@
+<h2><?=$action?></h2>
+
+<p>&nbsp;</p>
+<?=form_open_multipart('admin/places/add')?>
+   
+<fieldset>
+<legend>Place Details</legend>
+	<!--______________________________Plan Title___________________________________________-->
+      <p><label for="name">Place Title:</label>
+       <?=form_input(array('name'=>'place_title',
+                           'id'=>'place_title',
+                           'maxlength'=>'45', 
+                           'size'=>'35',
+                           ))?>
+                 <?=(isset($this->fal_validation) ? $this->fal_validation->{'place_title'.'_error'} : '')?>
+
+      </p>
+	<!--______________________________Plan Description___________________________________________-->
+      <p><label for="name">Place Description:</label>
+          <span style="width: 1000px">
+               <?$this->fckeditor->BasePath = base_url().$this->config->item('fckeditor_basepath');
+                    $this->fckeditor->Width='1000px';
+                    $this->fckeditor->Create() ;?>
+              </span>
+
+      </p>
+     
+
+</fieldset>	 
+   <input type="submit" class="submit" name="Submit" value="Add" />
+   <input type="reset" name="Reset"  class="submit" value="Reset" />
+   <input type="button" name="Back" value="Back" class="submit" onclick="location.href ='<?=site_url('admin/'.$controller.'/')?>'" />
+
+<?=form_close()?>

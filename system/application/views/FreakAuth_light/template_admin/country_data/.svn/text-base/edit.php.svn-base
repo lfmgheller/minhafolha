@@ -1,0 +1,27 @@
+
+<h2><?=$action?></h2>
+<p>&nbsp;</p>
+<?=form_open('admin/'.$controller.'/edit/'.$this->uri->segment(4,0))?>
+<fieldset>
+<legend>Place Details</legend>
+	<input type='hidden' name='place_id' value="<?=$reg['place_id']?>">
+	<!--______________________________ Title___________________________________________-->
+      <p><label for="name">Place  Title:</label>
+       <?=form_input(array('name'=>'place_title',
+                           'id'=>'place_title',
+                           'maxlength'=>'45', 
+                           'size'=>'35',
+                           'value'=>(isset($reg['place_title']) ? $reg['place_title'] : $this->fal_validation->{'place_title'})))?>
+      </p>
+	<!--______________________________ Description___________________________________________-->
+      <p><label for="name">Place Description:</label>
+        <?$this->fckeditor->BasePath = base_url().$this->config->item('fckeditor_basepath');
+        $this->fckeditor->Width='1000px';
+$this->fckeditor->Value =(isset($reg['place_description']) ? $reg['place_description'] : $this->fal_validation->{'place_description'});
+$this->fckeditor->Create() ;?>
+      </p>
+     
+</fieldset>	 
+     	<input type="submit" name="Submit" value="Save" class="submit" />		
+      	<input type="button" name="Back" value="Back" class="submit" onClick="location.href ='<?=site_url('admin/'.$controller)?>'" />
+<?=form_close()?>

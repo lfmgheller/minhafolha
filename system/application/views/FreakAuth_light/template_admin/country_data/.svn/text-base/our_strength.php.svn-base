@@ -1,0 +1,28 @@
+	<link type="text/css" rel="stylesheet" href="<?=base_url()?>public/admin/css/multiselect/smoothness/jquery-ui-1.8.2.custom.css" />
+	<link type="text/css" href="<?=base_url()?>public/admin/css/multiselect/ui.multiselect.css" rel="stylesheet" />
+        <script type="text/javascript" src="<?=base_url()?>public/admin/js/multiselect/jquery-ui-1.8.custom.min.js"></script>
+	<script type="text/javascript" src="<?=base_url()?>public/admin/js/multiselect/plugins/localisation/jquery.localisation-min.js"></script>
+	<script type="text/javascript" src="<?=base_url()?>public/admin/js/multiselect/plugins/scrollTo/jquery.scrollTo-min.js"></script>
+	<script type="text/javascript" src="<?=base_url()?>public/admin/js/multiselect/ui.multiselect.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".multiselect").multiselect();
+		});
+	</script>
+
+<h2><?=$action
+?></h2>
+<p>&nbsp;</p>
+
+<?=form_open('admin/places/updateStrength') ?>
+<fieldset>
+    Select Places for Our Strength:<hr width="50%" align="left"/>
+    <?if(isset($place_id)){?>
+<?=form_dropdown_from_db('place_id[]', 'select place_id,place_title from places',$place_id, 'class="multiselect" multiple="multiple"')?>
+    <?}else{?>
+    <?=form_dropdown_from_db('place_id[]', 'select place_id,place_title from places','', 'class="multiselect" multiple="multiple"')?>
+    <?}?>
+
+</fieldset>
+<input type="submit" class="submit" name="Submit" value="Update"/>
+<?=form_close()?>

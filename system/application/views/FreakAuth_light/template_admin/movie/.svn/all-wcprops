@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/php/!svn/ver/72/system/application/views/FreakAuth_light/template_admin/places
+END
+frontControl.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/php/!svn/ver/83/system/application/views/FreakAuth_light/template_admin/places/frontControl.php
+END
+hot_dest.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/php/!svn/ver/80/system/application/views/FreakAuth_light/template_admin/places/hot_dest.php
+END
+list.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/php/!svn/ver/12/system/application/views/FreakAuth_light/template_admin/places/list.php
+END
+show.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/php/!svn/ver/83/system/application/views/FreakAuth_light/template_admin/places/show.php
+END
+our_strength.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/php/!svn/ver/83/system/application/views/FreakAuth_light/template_admin/places/our_strength.php
+END
+edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/php/!svn/ver/47/system/application/views/FreakAuth_light/template_admin/places/edit.php
+END
+add.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/php/!svn/ver/47/system/application/views/FreakAuth_light/template_admin/places/add.php
+END

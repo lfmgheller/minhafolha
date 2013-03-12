@@ -1,0 +1,48 @@
+<?php
+//if no records in DB don't display the result table
+if (isset($reg))
+  {?>
+
+<table width="50%" border="0">
+  <tr>
+    <th scope="col" align="left">Position</th>
+    <th scope="col" align="left">Place Title</th>
+  </tr>
+ 
+  <?php foreach($reg as $loop):?>
+
+  <tr class="center">
+    <td align="left"><?=$loop['position'];?></td>
+    <td align="left"><?=$loop['place_title'];?></td>
+   
+  </tr>
+  <?php endforeach;?>
+</table>
+<?php }
+else { ?>
+<table>
+<tr>
+<td>No record to display</td>
+</tr>
+</table>
+<? } ?>
+<hr/>
+
+<form action="<?=base_url()?>index.php/admin/places/updateFront" method="post">
+<p>
+<label>Place One:</label><?=form_dropdown_from_db('place_1','select place_id,place_title from places',$reg[0]['FK_place_id'])?>
+</p>
+<p>
+<label>Place Two:</label><?=form_dropdown_from_db('place_2','select place_id,place_title from places',$reg[1]['FK_place_id'])?>
+</p>
+<p>
+<label>Place Three:</label><?=form_dropdown_from_db('place_3','select place_id,place_title from places',$reg[2]['FK_place_id'])?>
+</p>
+<p>
+<p>
+<label>Deal of the month:</label><?=form_dropdown_from_db('place_7','select place_id,place_title from places',$reg[3]['FK_place_id'])?>
+</p>
+<p>
+
+<input type="submit" value="Update" class="submit"/>
+</form>
